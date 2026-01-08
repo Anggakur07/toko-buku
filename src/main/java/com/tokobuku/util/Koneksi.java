@@ -3,21 +3,23 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package com.tokobuku.util;
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.DriverManager;
 /**
  *
  * @author MyBook Hype AMD
  */
 public class Koneksi {
     public static Connection getKoneksi() {
-        Connection con = null;
+        Connection conn = null;
         try {
             Class.forName("org.postgresql.Driver");
-            // Ganti 'admin' dengan password psql kamu
-            con = DriverManager.getConnection("jdbc:postgresql://localhost:5432/db_tokobuku", "postgres", "admin");
+            // Ganti 'namadb' dengan nama database kamu, misal: 'tokobuku'
+            conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/namadb", "postgres", "passwordkamu");
+            System.out.println("Koneksi Berhasil!"); 
         } catch (Exception e) {
-            e.printStackTrace();
+            System.out.println("Koneksi Gagal: " + e.getMessage());
         }
-        return con;
+        return conn;
     }
 }

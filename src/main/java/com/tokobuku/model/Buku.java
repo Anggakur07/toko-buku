@@ -9,8 +9,13 @@ package com.tokobuku.model;
  * @author MyBook Hype AMD
  */
 public class Buku {
+    private int id; 
+   
+    public int getId() { return id; }
+    public void setId(int id) { this.id = id; }
+    
     private String judul, penulis, gambar;
-    private double harga; // Gunakan double untuk tipe numeric
+    private double harga;
 
     public double getHarga() { return harga; }
     public void setHarga(double harga) { this.harga = harga; }
@@ -20,6 +25,7 @@ public class Buku {
 
     public String getJudul() { return judul; }
     public void setJudul(String judul) { this.judul = judul; }
+    
     public String getPenulis() { return penulis; }
     public void setPenulis(String penulis) { this.penulis = penulis; }
 }

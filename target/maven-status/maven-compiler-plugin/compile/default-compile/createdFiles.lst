@@ -1,3 +1,4 @@
 com\tokobuku\model\Buku.class
 com\tokobuku\controller\BukuServlet.class
 com\tokobuku\util\Koneksi.class
+com\tokobuku\controller\CheckoutServlet.class
