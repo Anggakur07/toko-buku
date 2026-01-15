@@ -11,15 +11,15 @@ import java.sql.DriverManager;
  */
 public class Koneksi {
     public static Connection getKoneksi() {
-        Connection conn = null;
-        try {
-            Class.forName("org.postgresql.Driver");
-            // Ganti 'namadb' dengan nama database kamu, misal: 'tokobuku'
-            conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/namadb", "postgres", "passwordkamu");
-            System.out.println("Koneksi Berhasil!"); 
-        } catch (Exception e) {
-            System.out.println("Koneksi Gagal: " + e.getMessage());
-        }
-        return conn;
+    Connection conn = null;
+    try {
+        Class.forName("org.postgresql.Driver");
+        conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/tokobuku_db", "postgres", "babibabi");
+    } catch (Exception e) { 
+        // Tambahkan printStackTrace agar error merah muncul di console NetBeans
+        e.printStackTrace(); 
+        System.out.println("Error Koneksi: " + e.getMessage());
     }
+    return conn;
+}
 }
